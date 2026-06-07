@@ -20,7 +20,7 @@ padding:0px;
 box-shadow:-1px 1px 9px 6px black;
 border-radius:12px;
 width:405px;
-    min-height:610px;
+    min-height:650px;
      position: sticky;       /* sticky works here */
   top: 0; 
 }
@@ -159,7 +159,7 @@ padding:0px;
 box-shadow:-1px 1px 9px 6px black;
 border-radius:12px;
 width: 405px;
-    min-height:50px;
+    min-height:650px;
      position: sticky;       /* sticky works here */
   top: 0; 
 }
