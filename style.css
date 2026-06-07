@@ -160,14 +160,14 @@ box-shadow:-1px 1px 9px 6px black;
 border-radius:12px;
 width: 405px;
     min-height:50px;
-     position: sticky;       /* sticky works here */
+     position: sticky;       
   top: 0; 
 }
     .all{
     display: block;
       position: sticky;
   top: 0;
-  z-index: 10;
+  
 
 }
 
