@@ -158,6 +158,18 @@ color: whitesmoke;
    
 
 }
+  .card {
+    background-color: #fff;
+    margin: 10px auto;       /* center card */
+    padding: 0;
+    box-shadow: -1px 1px 9px 6px black;
+    border-radius: 12px;
+    width: 95%;              /* responsive width */
+    min-height: 650px;
+    position: sticky;
+    top: 0;                  /* sticks to top */
+    z-index: 5;
+  }
 
 
 }
