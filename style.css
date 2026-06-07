@@ -152,24 +152,24 @@ margin-left:130px;
 color: whitesmoke;
 }
 @media only screen and (max-width:455px){
-
+.card{
+      background-color: rgb(255, 255, 255);
+    margin: 10px;
+padding:0px;
+box-shadow:-1px 1px 9px 6px black;
+border-radius:12px;
+width: 405px;
+    min-height:50px;
+     position: sticky;       /* sticky works here */
+  top: 0; 
+}
     .all{
     display: block;
-   
+      position: sticky;
+  top: 0;
+  z-index: 10;
 
 }
-  .card {
-    background-color: #fff;
-    margin: 10px auto;       /* center card */
-    padding: 0;
-    box-shadow: -1px 1px 9px 6px black;
-    border-radius: 12px;
-    width: 95%;              /* responsive width */
-    min-height: 650px;
-    position: sticky;
-    top: 0;                  /* sticks to top */
-    z-index: 5;
-  }
 
 
 }
