@@ -1,175 +1,123 @@
-
-body{
-
+body {
     background-color: black;
 }
-.all{
+
+.all {
     display: flex;
     justify-content: center;
-      position: sticky;
-  top: 0;
-  z-index: 10;
-
+    flex-wrap: wrap; /* Allows cards to drop to the next line on smaller screens */
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
-.card{
-      background-color: rgb(255, 255, 255);
-    display: inline-block;
+.card {
+    background-color: rgb(255, 255, 255);
     margin: 10px;
-padding:0px;
-box-shadow:-1px 1px 9px 6px black;
-border-radius:12px;
-width:405px;
-    min-height:650px;
-     position: sticky;       /* sticky works here */
-  top: 0; 
+    padding: 0px;
+    box-shadow: -1px 1px 9px 6px rgba(0,0,0,0.5); /* Smoothed out hardcoded black shadow */
+    border-radius: 12px;
+    width: 100%;          /* Forces it to be fluid */
+    max-width: 405px;    /* Prevents it from getting larger than your original design */
+    min-height: 650px;
+    position: sticky;       
+    top: 0; 
 }
 
-
-.element{
+.element {
     padding: 0.1cm;
-
-    
-}
-.button{
-    display: inline;
-    margin:12px;
-    border-radius:14px;
-  padding:4px;
-  opacity:0.8;
-  outline:solid 0.1px grey;
-}
-.button:hover{
-opacity:1;
-font-weight: bold;
-cursor:pointer;
-
 }
 
-.element img{
-    height:220px;
-    width:375px;
-    border-radius:12px;
-        display:flex;
-    justify-content: center;
-   margin-bottom: 15px;
+/* Fluid Images: This is crucial for mobile */
+.element img {
+    height: auto;        /* Maintains aspect ratio */
+    width: 100%;         /* Spans the width of the card */
+    max-width: 375px;    /* Limits upper bounds */
+    display: block;      /* Better than flex for standard image scaling */
+    margin: 0 auto 15px auto; /* Centers the image */
+    border-radius: 12px;
 }
-#title{
-    font-size:25px;
-    font-weight:bold;
+
+.button {
+    display: inline-block;
+    margin: 12px;
+    border-radius: 14px;
+    padding: 8px;
+    opacity: 0.8;
+    outline: solid 0.1px grey;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 1;
+    font-weight: bold;
+}
+
+#title {
+    font-size: 25px;
+    font-weight: bold;
     padding-left: 12px;
 }
-#read{
-margin-left:120px;
-  border-radius:22px;
-  padding:8px;
-  padding-left:18px;
-  padding-right:18px;
-  color:blue;
-    background-color:rgba(135, 207, 235, 0.657);
-}
-#intro{
-margin-bottom: 45px;
-font-weight: 300;
-padding-left: 12px;
+
+#intro {
+    margin-bottom: 45px;
+    font-weight: 300;
+    padding-left: 12px;
 }
 
-.card1:hover{
-  
-
-    margin: 0px;
-padding:4px;
-box-shadow:-1px 1px 9px 6px black;
-border-radius:12px;
-width:420px;
-    height:620px;
-}
-.card2:hover{
-  
-
-    margin: 0px;
-padding:4px;
-box-shadow:-1px 1px 9px 6px black;
-border-radius:12px;
-width:420px;
- height:620px;
-}
-.card3:hover{
-  
-
-    margin: 0px;
-padding:4px;
-box-shadow:-1px 1px 9px 6px black;
-border-radius:12px;
-width:400px;
-    height:600px;
-}
-.element{
-    padding: 0.1cm;
-}
-    
-
-.button{
-    display: inline;
-    margin:12px;
-    border-radius:14px;
-  padding:8px;
-  opacity:0.8;
-  outline:solid 0.1px grey;
+#read {
+    display: inline-block;
+    margin-left: 20px; /* Changed from fixed 120px to prevent pushing off-screen */
+    border-radius: 22px;
+    padding: 8px 18px;
+    color: blue;
+    background-color: rgba(135, 207, 235, 0.657);
 }
 
-
-    #intro{
-        min-height:40px;
-margin-bottom: 55px;
-font-weight: 310;
-padding-left: 22px;
-}
-.element img{
-    height:240px;
-    width:395px;
-    border-radius:22px;
-        display:flex;
-    justify-content: center;
-   margin-bottom: 25px;
-}
-#title{
-    font-size:35px;
-    font-weight:bold;
-    padding-left: 22px;
-}
-#read{
-margin-left:130px;
-  border-radius:32px;
-  padding:18px;
-  padding-left:28px;
-  padding-right:28px;
-  color:blue;
-    background-color:rgba(135, 207, 235, 0.657);
+#det {
+    color: whitesmoke;
 }
 
-#det{
-color: whitesmoke;
-}
-@media only screen and (max-width:455px){
-.card{
-      background-color: rgb(255, 255, 255);
-    margin: 10px;
-padding:0px;
-box-shadow:-1px 1px 9px 6px black;
-border-radius:12px;
-width: 405px;
-    min-height:650px;
-     position: sticky;       /* sticky works here */
-  top: 0; 
-}
-    .all{
-    display: block;
-      position: sticky;
-  top: 0;
-  z-index: 10;
-
+/* --- HOVER EFFECTS (Wrapped in a media query so they don't break mobile touch) --- */
+@media (min-width: 769px) {
+    .card1:hover, .card2:hover {
+        margin: 0px;
+        padding: 4px;
+        width: 420px;
+        height: 620px;
+    }
+    .card3:hover {
+        margin: 0px;
+        padding: 4px;
+        width: 400px;
+        height: 600px;
+    }
 }
 
+/* --- MOBILE MEDIA QUERY --- */
+@media only screen and (max-width: 455px) {
+    .all {
+        display: flex;
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center;
+    }
 
+    .card {
+        width: 90%; /* Leaves a nice breathing room/margin on phone edges */
+        min-height: auto; /* Lets the card shrink vertically if needed on short screens */
+        padding-bottom: 20px;
+    }
+
+    .element img {
+        width: 90%; /* Scales image down nicely inside the smaller card */
+        height: auto;
+    }
+
+    #title {
+        font-size: 22px; /* Scale down text size so it doesn't wrap awkwardly */
+    }
+
+    #read {
+        margin-left: 12px; /* Pulls it back so it doesn't clip past the right edge */
+    }
 }
